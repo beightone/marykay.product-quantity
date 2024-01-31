@@ -17,7 +17,7 @@ interface StepperProps {
   showUnit: boolean
 }
 
-const CSS_HANDLES = ['quantitySelectorStepper'] as const
+const CSS_HANDLES = ['quantitySelectorStepper', 'limitQuantity'] as const
 
 const StepperProductQuantity: FunctionComponent<StepperProps> = ({
   unitMultiplier = 1,
@@ -29,7 +29,8 @@ const StepperProductQuantity: FunctionComponent<StepperProps> = ({
   showUnit,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
-
+  const maxValueSelected = 99
+  const maxTotalQuantity = availableQuantity < maxValueSelected ? availableQuantity : maxValueSelected
   return (
     <div className={handles.quantitySelectorStepper}>
       <NumericStepper
@@ -43,8 +44,11 @@ const StepperProductQuantity: FunctionComponent<StepperProps> = ({
         }
         onChange={onChange}
         value={selectedQuantity}
-        maxValue={availableQuantity || undefined}
+        maxValue={maxTotalQuantity || undefined}
       />
+    {maxTotalQuantity === selectedQuantity &&
+      (<span className={handles.limitQuantity}>Limite atingido!</span>)
+    }
     </div>
   )
 }
