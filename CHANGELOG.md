@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed 
+
+- [Quantity lock included in the PDP selector](https://github.com/beightone/marykay.product-quantity/pull/1)
+
 ## [1.9.0] - 2022-12-23
 
 ### Added
