@@ -1,7 +1,7 @@
 {
   "vendor": "marykay",
   "name": "product-quantity",
-  "version": "1.9.1",
+  "version": "2.0.0",
   "title": "Product Quantity",
   "description": "Product quantity",
   "builders": {
